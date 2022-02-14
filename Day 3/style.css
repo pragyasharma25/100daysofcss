@@ -1,0 +1,301 @@
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#5dade2), to(#cbb894));
+  background: linear-gradient(to bottom, #5dade2, #cbb894);
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.frame {
+  width: 400px;
+  height: 400px;
+  background: #17202a;
+  -webkit-box-shadow: 0 15px 25px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 15px 25px 20px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.circle {
+  position: relative;
+  overflow: hidden;
+  -webkit-clip-path: circle(90px at 90px 90px);
+          clip-path: circle(90px at 90px 90px);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  -webkit-animation: circle-disappear 4s infinite;
+          animation: circle-disappear 4s infinite;
+}
+
+.circle .sky {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 124px;
+  background: #7ddffc;
+}
+
+.circle .sun {
+  position: absolute;
+  z-index: 2;
+  top: 7px;
+  left: 73px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #ffef00;
+  -webkit-transform-origin: 50% 400%;
+          transform-origin: 50% 400%;
+  -webkit-animation: sun-left-to-right 4s infinite;
+          animation: sun-left-to-right 4s infinite;
+}
+
+.circle .left-side {
+  position: absolute;
+  top: 67px;
+  left: 35px;
+  height: 57px;
+  width: 116px;
+  background: #f4f4f4;
+  -webkit-clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+          clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+  -webkit-animation: left-side-shadow 4s infinite;
+          animation: left-side-shadow 4s infinite;
+}
+
+.circle .right-side {
+  position: absolute;
+  top: 67px;
+  left: 93px;
+  height: 57px;
+  width: 58px;
+  background: #dddada;
+  -webkit-clip-path: polygon(30% 100%, 100% 100%, 0% 0%);
+          clip-path: polygon(30% 100%, 100% 100%, 0% 0%);
+  -webkit-animation: right-side-shadow 4s infinite;
+          animation: right-side-shadow 4s infinite;
+}
+
+.circle .shadow {
+  position: absolute;
+  z-index: 2;
+  top: 124px;
+  left: -80px;
+  height: 30px;
+  width: 360px;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+  -webkit-clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+          clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+  -webkit-animation: shadow-right-to-left 4s infinite;
+          animation: shadow-right-to-left 4s infinite;
+}
+
+.circle .land {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: #f0de75;
+}
+
+@-webkit-keyframes sun-left-to-right {
+  0% {
+    -webkit-transform: rotate(-70deg);
+            transform: rotate(-70deg);
+  }
+  30% {
+    -webkit-transform: rotate(-28deg);
+            transform: rotate(-28deg);
+  }
+  100% {
+    -webkit-transform: rotate(70deg);
+            transform: rotate(70deg);
+  }
+}
+
+@keyframes sun-left-to-right {
+  0% {
+    -webkit-transform: rotate(-70deg);
+            transform: rotate(-70deg);
+  }
+  30% {
+    -webkit-transform: rotate(-28deg);
+            transform: rotate(-28deg);
+  }
+  100% {
+    -webkit-transform: rotate(70deg);
+            transform: rotate(70deg);
+  }
+}
+
+@-webkit-keyframes left-side-shadow {
+  0% {
+    background: #fff;
+  }
+  30% {
+    background: #fff;
+  }
+  70% {
+    background: #e5e4e2;
+  }
+  100% {
+    background: #899499;
+  }
+}
+
+@keyframes left-side-shadow {
+  0% {
+    background: #fff;
+  }
+  30% {
+    background: #fff;
+  }
+  70% {
+    background: #e5e4e2;
+  }
+  100% {
+    background: #899499;
+  }
+}
+
+@-webkit-keyframes right-side-shadow {
+  0% {
+    background: #899499;
+  }
+  30% {
+    background: #e5e4e2;
+  }
+  70% {
+    background: #fff;
+  }
+  100% {
+    background: #fff;
+  }
+}
+
+@keyframes right-side-shadow {
+  0% {
+    background: #899499;
+  }
+  30% {
+    background: #e5e4e2;
+  }
+  70% {
+    background: #fff;
+  }
+  100% {
+    background: #fff;
+  }
+}
+
+@-webkit-keyframes shadow-right-to-left {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-clip-path: polygon(115px 0%, 231px 0%, 100% 100%);
+            clip-path: polygon(115px 0%, 231px 0%, 100% 100%);
+  }
+  30% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+            clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+  }
+  55% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+  }
+  75% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  100% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-clip-path: polygon(115px 0%, 231px 0%, 0% 100%);
+            clip-path: polygon(115px 0%, 231px 0%, 0% 100%);
+  }
+}
+
+@keyframes shadow-right-to-left {
+  0% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-clip-path: polygon(115px 0%, 231px 0%, 100% 100%);
+            clip-path: polygon(115px 0%, 231px 0%, 100% 100%);
+  }
+  30% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+            clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+  }
+  55% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+  }
+  75% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+  100% {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-clip-path: polygon(115px 0%, 231px 0%, 0% 100%);
+            clip-path: polygon(115px 0%, 231px 0%, 0% 100%);
+  }
+}
+
+@-webkit-keyframes circle-disappear {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes circle-disappear {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

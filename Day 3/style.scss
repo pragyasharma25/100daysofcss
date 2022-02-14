@@ -1,0 +1,190 @@
+body {
+  background: linear-gradient(to bottom, #5dade2, #cbb894);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.frame {
+  width: 400px;
+  height: 400px;
+  background: #17202a;
+  box-shadow: 0 15px 25px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$dark-grey: #899499;
+$light-grey: #e5e4e2;
+
+.circle {
+  position: relative;
+  overflow: hidden;
+  clip-path: circle(90px at 90px 90px);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  animation: circle-disappear 4s infinite;
+
+  .sky {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 124px;
+    background: #7ddffc;
+  }
+
+  .sun {
+    position: absolute;
+    z-index: 2;
+    top: 7px;
+    left: 73px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #ffef00;
+    transform-origin: 50% 400%;
+    animation: sun-left-to-right 4s infinite;
+  }
+
+  .left-side {
+    position: absolute;
+    top: 67px;
+    left: 35px;
+    height: 57px;
+    width: 116px;
+    background: #f4f4f4;
+    clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+    animation: left-side-shadow 4s infinite;
+  }
+
+  .right-side {
+    position: absolute;
+    top: 67px;
+    left: 93px;
+    height: 57px;
+    width: 58px;
+    background: #dddada;
+    clip-path: polygon(30% 100%, 100% 100%, 0% 0%);
+    animation: right-side-shadow 4s infinite;
+  }
+
+  .shadow {
+    position: absolute;
+    z-index: 2;
+    top: 124px;
+    left: -80px;
+    height: 30px;
+    width: 360px;
+    background: rgba(0, 0, 0, 0.2);
+    transform-origin: 50% 0%;
+    clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+    animation: shadow-right-to-left 4s infinite;
+  }
+
+  .land {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: #f0de75;
+  }
+}
+
+@keyframes sun-left-to-right {
+  0% {
+    transform: rotate(-70deg);
+  }
+
+  30% {
+    transform: rotate(-28deg);
+  }
+
+  100% {
+    transform: rotate(70deg);
+  }
+}
+
+@keyframes left-side-shadow {
+  0% {
+    background: #fff;
+  }
+
+  30% {
+    background: #fff;
+  }
+
+  70% {
+    background: $light-grey;
+  }
+
+  100% {
+    background: $dark-grey;
+  }
+}
+
+@keyframes right-side-shadow {
+  0% {
+    background: $dark-grey;
+  }
+
+  30% {
+    background: $light-grey;
+  }
+
+  70% {
+    background: #fff;
+  }
+
+  100% {
+    background: #fff;
+  }
+}
+
+@keyframes shadow-right-to-left {
+  0% {
+    transform: scaleY(0);
+    clip-path: polygon(115px 0%, 231px 0%, 100% 100%);
+  }
+
+  30% {
+    transform: scaleY(1);
+    clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+  }
+
+  55% {
+    transform: scaleY(0.4);
+  }
+
+  75% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0);
+    clip-path: polygon(115px 0%, 231px 0%, 0% 100%);
+  }
+}
+
+@keyframes circle-disappear {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
