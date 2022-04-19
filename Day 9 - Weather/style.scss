@@ -1,0 +1,377 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame {
+  width: 400px;
+  height: 400px;
+  border-radius: 7px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  background-color: rgb(26, 34, 56);
+
+  position: relative;
+}
+
+.front-cloud {
+  position: absolute;
+  background: #303c5d;
+  height: 300px;
+  left: 100px;
+  z-index: 10;
+  width: 300px;
+  border-radius: 50%;
+  bottom: -220px;
+
+  &::after,
+  &::before {
+    content: "";
+    background: #303c5d;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  &::before {
+    top: 20px;
+    left: -160px;
+  }
+
+  &::after {
+    top: 30px;
+    left: 160px;
+  }
+}
+
+.back-cloud {
+  background: #26304f;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  top: 210px;
+  left: -30px;
+
+  &::after {
+    content: "";
+    background: rgb(38, 49, 79);
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    top: 0px;
+    left: 230px;
+  }
+}
+
+.stars {
+  position: absolute;
+  border-radius: 2%;
+  background: rgb(233, 233, 233);
+  box-shadow: 0 0 30px 0 #f6f6f6;
+  transform: rotate(45deg);
+  width: 1px;
+  height: 1px;
+  animation: stars 2.5s infinite 1s alternate;
+
+  &-1 {
+    top: 26%;
+    left: 5%;
+  }
+  &-2 {
+    top: 6%;
+    left: 8%;
+  }
+  &-3 {
+    top: 12%;
+    left: 22%;
+  }
+  &-4 {
+    top: 15%;
+    left: 43%;
+  }
+  &-5 {
+    top: 6%;
+    left: 33%;
+  }
+  &-6 {
+    top: 44%;
+    left: 12%;
+  }
+  &-7 {
+    top: 29%;
+    left: 51%;
+  }
+  &-8 {
+    top: 20%;
+    left: 63%;
+  }
+  &-9 {
+    top: 40%;
+    left: 75%;
+  }
+  &-10 {
+    top: 2%;
+    left: 56%;
+  }
+  &-11 {
+    top: 12%;
+    left: 90%;
+  }
+  &-12 {
+    top: 45%;
+    left: 56%;
+  }
+  &-13 {
+    top: 12%;
+    left: 77%;
+  }
+  &-14 {
+    top: 30%;
+    left: 94%;
+  }
+  &-15 {
+    top: 38%;
+    left: 39%;
+  }
+}
+.moon {
+  position: absolute;
+  top: 45px;
+  left: 55px;
+  background-color: #f6edbd;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 #f6edbd;
+  animation: moon 1.5s infinite 1s alternate;
+  overflow: hidden;
+
+  .crater-1 {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    top: 9px;
+    left: 28px;
+    border-radius: 10px;
+    background-color: #ece1a8;
+    animation: crater 1.5s infinite 1s alternate;
+  }
+
+  .crater-2 {
+    @extend .crater-1;
+    top: 12px;
+    left: 0;
+  }
+
+  .crater-3 {
+    @extend .crater-1;
+    top: 56px;
+    left: 10px;
+  }
+
+  .crater-4 {
+    @extend .crater-1;
+    width: 6px;
+    height: 6px;
+    top: 37px;
+    left: 49px;
+  }
+
+  .crater-5 {
+    @extend .crater-4;
+    top: 24px;
+    left: 61px;
+  }
+
+  .crater-6 {
+    @extend .crater-4;
+    top: 55px;
+    left: 33px;
+  }
+
+  .crater-7 {
+    @extend .crater-4;
+    top: 17px;
+    left: 46px;
+  }
+
+  .crater-8 {
+    @extend .crater-4;
+    top: 28px;
+    left: 27px;
+  }
+
+  .crater-9 {
+    @extend .crater-4;
+    top: 39px;
+    left: 17px;
+  }
+
+  .crater-10 {
+    @extend .crater-1;
+    width: 4px;
+    height: 4px;
+    top: 25px;
+    left: 15px;
+  }
+}
+
+@keyframes moon {
+  from {
+    box-shadow: 0 0 10px 0 #f6edbd;
+  }
+  to {
+    box-shadow: 0 0 30px 0 #f2f1e9;
+  }
+}
+
+@keyframes stars {
+  from {
+    box-shadow: 0 0 30px 0 #f6f6f6;
+    width: 1px;
+    height: 1px;
+  }
+  to {
+    box-shadow: 0 0 50px 0 #f6f6f6;
+    width: 2px;
+    height: 2px;
+  }
+}
+
+@for $k from 1 through 10 {
+  .big-flake-#{ $k } {
+    position: absolute;
+    left: (-20 + 38 * $k) + px;
+    top: -20px;
+    color: #fff;
+    z-index: 5;
+    animation: fall, shake-big;
+    animation-duration: (7 + random(40) / 10) + s, 3s;
+    animation-delay: (random(70) / 10) + s, (random(10) / 10) + s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+    transform-origin: 50% 100%;
+  }
+}
+
+@for $m from 1 through 10 {
+  .medium-flake-#{ $m } {
+    @extend .big-flake-1;
+    left: (-20 + 38 * $m) + px;
+    opacity: 0.75;
+    animation: fall, shake-medium;
+    animation-duration: (10 + random(40) / 10) + s, 4s;
+    animation-delay: (random(70) / 10) + s, (random(10) / 10) + s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+    transform-origin: 50% 100%;
+  }
+}
+
+@for $n from 1 through 10 {
+  .small-flake-#{ $n } {
+    @extend .big-flake-1;
+    left: (-20 + 38 * $n) + px;
+    opacity: 0.5;
+    animation: fall, shake-small;
+    animation-duration: (13 + random(40) / 10) + s, 5s;
+    animation-delay: (random(70) / 10) + s, (random(10) / 10) + s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+    transform-origin: 50% 100%;
+  }
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes shake-big {
+  0% {
+    transform: translateX(0px) scale(1.5, 1.5);
+  }
+  50% {
+    transform: translateX(80px) scale(1.5, 1.5);
+  }
+  100% {
+    transform: translateX(0px) scale(1.5, 1.5);
+  }
+}
+
+@keyframes shake-medium {
+  0% {
+    transform: translateX(0px) scale(1, 1);
+  }
+  50% {
+    transform: translateX(60px) scale(1, 1);
+  }
+  100% {
+    transform: translateX(0px) scale(1, 1);
+  }
+}
+
+@keyframes shake-small {
+  0% {
+    transform: translateX(0px) scale(0.8, 0.8);
+  }
+  50% {
+    transform: translateX(40px) scale(0.8, 0.8);
+  }
+  100% {
+    transform: translateX(0px) scale(0.8, 0.8);
+  }
+}
+
+.info {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  z-index: 1000;
+  border-radius: 20px;
+  background-color: rgba(#000, 0.4);
+  color: #f2f2f2;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  box-shadow: 5px 8px 10px rgba(#fff, 0.3);
+  width: 380px;
+  height: 80px;
+  padding: 10px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .temp {
+    font-size: 50px;
+  }
+
+  .day {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
