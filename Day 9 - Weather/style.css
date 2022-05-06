@@ -1,0 +1,931 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame {
+  width: 400px;
+  height: 400px;
+  border-radius: 7px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  background-color: rgb(26, 34, 56);
+  position: relative;
+}
+
+.front-cloud {
+  position: absolute;
+  background: #303c5d;
+  height: 300px;
+  left: 100px;
+  z-index: 10;
+  width: 300px;
+  border-radius: 50%;
+  bottom: -220px;
+}
+.front-cloud::after, .front-cloud::before {
+  content: "";
+  background: #303c5d;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: absolute;
+}
+.front-cloud::before {
+  top: 20px;
+  left: -160px;
+}
+.front-cloud::after {
+  top: 30px;
+  left: 160px;
+}
+
+.back-cloud {
+  background: #26304f;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  top: 210px;
+  left: -30px;
+}
+.back-cloud::after {
+  content: "";
+  background: rgb(38, 49, 79);
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  top: 0px;
+  left: 230px;
+}
+
+.stars {
+  position: absolute;
+  border-radius: 2%;
+  background: rgb(233, 233, 233);
+  box-shadow: 0 0 30px 0 #f6f6f6;
+  transform: rotate(45deg);
+  width: 1px;
+  height: 1px;
+  -webkit-animation: stars 2.5s infinite 1s alternate;
+          animation: stars 2.5s infinite 1s alternate;
+}
+.stars-1 {
+  top: 26%;
+  left: 5%;
+}
+.stars-2 {
+  top: 6%;
+  left: 8%;
+}
+.stars-3 {
+  top: 12%;
+  left: 22%;
+}
+.stars-4 {
+  top: 15%;
+  left: 43%;
+}
+.stars-5 {
+  top: 6%;
+  left: 33%;
+}
+.stars-6 {
+  top: 44%;
+  left: 12%;
+}
+.stars-7 {
+  top: 29%;
+  left: 51%;
+}
+.stars-8 {
+  top: 20%;
+  left: 63%;
+}
+.stars-9 {
+  top: 40%;
+  left: 75%;
+}
+.stars-10 {
+  top: 2%;
+  left: 56%;
+}
+.stars-11 {
+  top: 12%;
+  left: 90%;
+}
+.stars-12 {
+  top: 45%;
+  left: 56%;
+}
+.stars-13 {
+  top: 12%;
+  left: 77%;
+}
+.stars-14 {
+  top: 30%;
+  left: 94%;
+}
+.stars-15 {
+  top: 38%;
+  left: 39%;
+}
+
+.moon {
+  position: absolute;
+  top: 45px;
+  left: 55px;
+  background-color: #f6edbd;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 #f6edbd;
+  -webkit-animation: moon 1.5s infinite 1s alternate;
+          animation: moon 1.5s infinite 1s alternate;
+  overflow: hidden;
+}
+.moon .crater-1, .moon .crater-10, .moon .crater-4, .moon .crater-9, .moon .crater-8, .moon .crater-7, .moon .crater-6, .moon .crater-5, .moon .crater-3, .moon .crater-2 {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  top: 9px;
+  left: 28px;
+  border-radius: 10px;
+  background-color: #ece1a8;
+  -webkit-animation: crater 1.5s infinite 1s alternate;
+          animation: crater 1.5s infinite 1s alternate;
+}
+.moon .crater-2 {
+  top: 12px;
+  left: 0;
+}
+.moon .crater-3 {
+  top: 56px;
+  left: 10px;
+}
+.moon .crater-4, .moon .crater-9, .moon .crater-8, .moon .crater-7, .moon .crater-6, .moon .crater-5 {
+  width: 6px;
+  height: 6px;
+  top: 37px;
+  left: 49px;
+}
+.moon .crater-5 {
+  top: 24px;
+  left: 61px;
+}
+.moon .crater-6 {
+  top: 55px;
+  left: 33px;
+}
+.moon .crater-7 {
+  top: 17px;
+  left: 46px;
+}
+.moon .crater-8 {
+  top: 28px;
+  left: 27px;
+}
+.moon .crater-9 {
+  top: 39px;
+  left: 17px;
+}
+.moon .crater-10 {
+  width: 4px;
+  height: 4px;
+  top: 25px;
+  left: 15px;
+}
+
+@-webkit-keyframes moon {
+  from {
+    box-shadow: 0 0 10px 0 #f6edbd;
+  }
+  to {
+    box-shadow: 0 0 30px 0 #f2f1e9;
+  }
+}
+
+@keyframes moon {
+  from {
+    box-shadow: 0 0 10px 0 #f6edbd;
+  }
+  to {
+    box-shadow: 0 0 30px 0 #f2f1e9;
+  }
+}
+@-webkit-keyframes stars {
+  from {
+    box-shadow: 0 0 30px 0 #f6f6f6;
+    width: 1px;
+    height: 1px;
+  }
+  to {
+    box-shadow: 0 0 50px 0 #f6f6f6;
+    width: 2px;
+    height: 2px;
+  }
+}
+@keyframes stars {
+  from {
+    box-shadow: 0 0 30px 0 #f6f6f6;
+    width: 1px;
+    height: 1px;
+  }
+  to {
+    box-shadow: 0 0 50px 0 #f6f6f6;
+    width: 2px;
+    height: 2px;
+  }
+}
+.big-flake-1, .small-flake-10, .small-flake-9, .small-flake-8, .small-flake-7, .small-flake-6, .small-flake-5, .small-flake-4, .small-flake-3, .small-flake-2, .small-flake-1, .medium-flake-10, .medium-flake-9, .medium-flake-8, .medium-flake-7, .medium-flake-6, .medium-flake-5, .medium-flake-4, .medium-flake-3, .medium-flake-2, .medium-flake-1 {
+  position: absolute;
+  left: 18px;
+  top: -20px;
+  color: #fff;
+  z-index: 5;
+  -webkit-animation: fall, shake-big;
+          animation: fall, shake-big;
+  -webkit-animation-duration: 10.6s, 3s;
+          animation-duration: 10.6s, 3s;
+  -webkit-animation-delay: 3s, 0.9s;
+          animation-delay: 3s, 0.9s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.big-flake-2 {
+  position: absolute;
+  left: 56px;
+  top: -20px;
+  color: #fff;
+  z-index: 5;
+  -webkit-animation: fall, shake-big;
+          animation: fall, shake-big;
+  -webkit-animation-duration: 9.1s, 3s;
+          animation-duration: 9.1s, 3s;
+  -webkit-animation-delay: 2s, 0.3s;
+          animation-delay: 2s, 0.3s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.big-flake-3 {
+  position: absolute;
+  left: 94px;
+  top: -20px;
+  color: #fff;
+  z-index: 5;
+  -webkit-animation: fall, shake-big;
+          animation: fall, shake-big;
+  -webkit-animation-duration: 10.3s, 3s;
+          animation-duration: 10.3s, 3s;
+  -webkit-animation-delay: 3.4s, 0.9s;
+          animation-delay: 3.4s, 0.9s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.big-flake-4 {
+  position: absolute;
+  left: 132px;
+  top: -20px;
+  color: #fff;
+  z-index: 5;
+  -webkit-animation: fall, shake-big;
+          animation: fall, shake-big;
+  -webkit-animation-duration: 9.4s, 3s;
+          animation-duration: 9.4s, 3s;
+  -webkit-animation-delay: 5.2s, 0.9s;
+          animation-delay: 5.2s, 0.9s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.big-flake-5 {
+  position: absolute;
+  left: 170px;
+  top: -20px;
+  color: #fff;
+  z-index: 5;
+  -webkit-animation: fall, shake-big;
+          animation: fall, shake-big;
+  -webkit-animation-duration: 9.3s, 3s;
+          animation-duration: 9.3s, 3s;
+  -webkit-animation-delay: 1s, 0.6s;
+          animation-delay: 1s, 0.6s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.big-flake-6 {
+  position: absolute;
+  left: 208px;
+  top: -20px;
+  color: #fff;
+  z-index: 5;
+  -webkit-animation: fall, shake-big;
+          animation: fall, shake-big;
+  -webkit-animation-duration: 8s, 3s;
+          animation-duration: 8s, 3s;
+  -webkit-animation-delay: 5s, 0.4s;
+          animation-delay: 5s, 0.4s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.big-flake-7 {
+  position: absolute;
+  left: 246px;
+  top: -20px;
+  color: #fff;
+  z-index: 5;
+  -webkit-animation: fall, shake-big;
+          animation: fall, shake-big;
+  -webkit-animation-duration: 10.8s, 3s;
+          animation-duration: 10.8s, 3s;
+  -webkit-animation-delay: 3.3s, 0.4s;
+          animation-delay: 3.3s, 0.4s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.big-flake-8 {
+  position: absolute;
+  left: 284px;
+  top: -20px;
+  color: #fff;
+  z-index: 5;
+  -webkit-animation: fall, shake-big;
+          animation: fall, shake-big;
+  -webkit-animation-duration: 10.3s, 3s;
+          animation-duration: 10.3s, 3s;
+  -webkit-animation-delay: 5.6s, 0.4s;
+          animation-delay: 5.6s, 0.4s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.big-flake-9 {
+  position: absolute;
+  left: 322px;
+  top: -20px;
+  color: #fff;
+  z-index: 5;
+  -webkit-animation: fall, shake-big;
+          animation: fall, shake-big;
+  -webkit-animation-duration: 10.8s, 3s;
+          animation-duration: 10.8s, 3s;
+  -webkit-animation-delay: 2.8s, 0.5s;
+          animation-delay: 2.8s, 0.5s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.big-flake-10 {
+  position: absolute;
+  left: 360px;
+  top: -20px;
+  color: #fff;
+  z-index: 5;
+  -webkit-animation: fall, shake-big;
+          animation: fall, shake-big;
+  -webkit-animation-duration: 10.4s, 3s;
+          animation-duration: 10.4s, 3s;
+  -webkit-animation-delay: 6.4s, 0.8s;
+          animation-delay: 6.4s, 0.8s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.medium-flake-1 {
+  left: 18px;
+  opacity: 0.75;
+  -webkit-animation: fall, shake-medium;
+          animation: fall, shake-medium;
+  -webkit-animation-duration: 13.2s, 4s;
+          animation-duration: 13.2s, 4s;
+  -webkit-animation-delay: 3.6s, 0.2s;
+          animation-delay: 3.6s, 0.2s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.medium-flake-2 {
+  left: 56px;
+  opacity: 0.75;
+  -webkit-animation: fall, shake-medium;
+          animation: fall, shake-medium;
+  -webkit-animation-duration: 12.1s, 4s;
+          animation-duration: 12.1s, 4s;
+  -webkit-animation-delay: 0.7s, 1s;
+          animation-delay: 0.7s, 1s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.medium-flake-3 {
+  left: 94px;
+  opacity: 0.75;
+  -webkit-animation: fall, shake-medium;
+          animation: fall, shake-medium;
+  -webkit-animation-duration: 11.8s, 4s;
+          animation-duration: 11.8s, 4s;
+  -webkit-animation-delay: 6.2s, 0.2s;
+          animation-delay: 6.2s, 0.2s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.medium-flake-4 {
+  left: 132px;
+  opacity: 0.75;
+  -webkit-animation: fall, shake-medium;
+          animation: fall, shake-medium;
+  -webkit-animation-duration: 13.9s, 4s;
+          animation-duration: 13.9s, 4s;
+  -webkit-animation-delay: 2.2s, 0.8s;
+          animation-delay: 2.2s, 0.8s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.medium-flake-5 {
+  left: 170px;
+  opacity: 0.75;
+  -webkit-animation: fall, shake-medium;
+          animation: fall, shake-medium;
+  -webkit-animation-duration: 12.2s, 4s;
+          animation-duration: 12.2s, 4s;
+  -webkit-animation-delay: 6.6s, 0.2s;
+          animation-delay: 6.6s, 0.2s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.medium-flake-6 {
+  left: 208px;
+  opacity: 0.75;
+  -webkit-animation: fall, shake-medium;
+          animation: fall, shake-medium;
+  -webkit-animation-duration: 10.4s, 4s;
+          animation-duration: 10.4s, 4s;
+  -webkit-animation-delay: 0.2s, 0.2s;
+          animation-delay: 0.2s, 0.2s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.medium-flake-7 {
+  left: 246px;
+  opacity: 0.75;
+  -webkit-animation: fall, shake-medium;
+          animation: fall, shake-medium;
+  -webkit-animation-duration: 13.1s, 4s;
+          animation-duration: 13.1s, 4s;
+  -webkit-animation-delay: 1.7s, 0.6s;
+          animation-delay: 1.7s, 0.6s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.medium-flake-8 {
+  left: 284px;
+  opacity: 0.75;
+  -webkit-animation: fall, shake-medium;
+          animation: fall, shake-medium;
+  -webkit-animation-duration: 10.8s, 4s;
+          animation-duration: 10.8s, 4s;
+  -webkit-animation-delay: 6.9s, 0.9s;
+          animation-delay: 6.9s, 0.9s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.medium-flake-9 {
+  left: 322px;
+  opacity: 0.75;
+  -webkit-animation: fall, shake-medium;
+          animation: fall, shake-medium;
+  -webkit-animation-duration: 10.7s, 4s;
+          animation-duration: 10.7s, 4s;
+  -webkit-animation-delay: 4.7s, 0.8s;
+          animation-delay: 4.7s, 0.8s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.medium-flake-10 {
+  left: 360px;
+  opacity: 0.75;
+  -webkit-animation: fall, shake-medium;
+          animation: fall, shake-medium;
+  -webkit-animation-duration: 10.8s, 4s;
+          animation-duration: 10.8s, 4s;
+  -webkit-animation-delay: 6.7s, 0.9s;
+          animation-delay: 6.7s, 0.9s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.small-flake-1 {
+  left: 18px;
+  opacity: 0.5;
+  -webkit-animation: fall, shake-small;
+          animation: fall, shake-small;
+  -webkit-animation-duration: 13.8s, 5s;
+          animation-duration: 13.8s, 5s;
+  -webkit-animation-delay: 0.1s, 0.9s;
+          animation-delay: 0.1s, 0.9s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.small-flake-2 {
+  left: 56px;
+  opacity: 0.5;
+  -webkit-animation: fall, shake-small;
+          animation: fall, shake-small;
+  -webkit-animation-duration: 16.9s, 5s;
+          animation-duration: 16.9s, 5s;
+  -webkit-animation-delay: 6.3s, 0.4s;
+          animation-delay: 6.3s, 0.4s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.small-flake-3 {
+  left: 94px;
+  opacity: 0.5;
+  -webkit-animation: fall, shake-small;
+          animation: fall, shake-small;
+  -webkit-animation-duration: 15.9s, 5s;
+          animation-duration: 15.9s, 5s;
+  -webkit-animation-delay: 5.2s, 0.6s;
+          animation-delay: 5.2s, 0.6s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.small-flake-4 {
+  left: 132px;
+  opacity: 0.5;
+  -webkit-animation: fall, shake-small;
+          animation: fall, shake-small;
+  -webkit-animation-duration: 13.1s, 5s;
+          animation-duration: 13.1s, 5s;
+  -webkit-animation-delay: 6.2s, 1s;
+          animation-delay: 6.2s, 1s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.small-flake-5 {
+  left: 170px;
+  opacity: 0.5;
+  -webkit-animation: fall, shake-small;
+          animation: fall, shake-small;
+  -webkit-animation-duration: 16.3s, 5s;
+          animation-duration: 16.3s, 5s;
+  -webkit-animation-delay: 0.3s, 0.1s;
+          animation-delay: 0.3s, 0.1s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.small-flake-6 {
+  left: 208px;
+  opacity: 0.5;
+  -webkit-animation: fall, shake-small;
+          animation: fall, shake-small;
+  -webkit-animation-duration: 16.2s, 5s;
+          animation-duration: 16.2s, 5s;
+  -webkit-animation-delay: 6.1s, 0.6s;
+          animation-delay: 6.1s, 0.6s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.small-flake-7 {
+  left: 246px;
+  opacity: 0.5;
+  -webkit-animation: fall, shake-small;
+          animation: fall, shake-small;
+  -webkit-animation-duration: 14.8s, 5s;
+          animation-duration: 14.8s, 5s;
+  -webkit-animation-delay: 2.2s, 0.4s;
+          animation-delay: 2.2s, 0.4s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.small-flake-8 {
+  left: 284px;
+  opacity: 0.5;
+  -webkit-animation: fall, shake-small;
+          animation: fall, shake-small;
+  -webkit-animation-duration: 13.3s, 5s;
+          animation-duration: 13.3s, 5s;
+  -webkit-animation-delay: 1.7s, 0.2s;
+          animation-delay: 1.7s, 0.2s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.small-flake-9 {
+  left: 322px;
+  opacity: 0.5;
+  -webkit-animation: fall, shake-small;
+          animation: fall, shake-small;
+  -webkit-animation-duration: 14s, 5s;
+          animation-duration: 14s, 5s;
+  -webkit-animation-delay: 3.8s, 0.9s;
+          animation-delay: 3.8s, 0.9s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+.small-flake-10 {
+  left: 360px;
+  opacity: 0.5;
+  -webkit-animation: fall, shake-small;
+          animation: fall, shake-small;
+  -webkit-animation-duration: 14.4s, 5s;
+          animation-duration: 14.4s, 5s;
+  -webkit-animation-delay: 4.7s, 0.3s;
+          animation-delay: 4.7s, 0.3s;
+  -webkit-animation-timing-function: linear, ease-in-out;
+          animation-timing-function: linear, ease-in-out;
+  -webkit-animation-iteration-count: infinite, infinite;
+          animation-iteration-count: infinite, infinite;
+  -webkit-animation-play-state: running, running;
+          animation-play-state: running, running;
+  transform-origin: 50% 100%;
+}
+
+@-webkit-keyframes fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@-webkit-keyframes shake-big {
+  0% {
+    transform: translateX(0px) scale(1.5, 1.5);
+  }
+  50% {
+    transform: translateX(80px) scale(1.5, 1.5);
+  }
+  100% {
+    transform: translateX(0px) scale(1.5, 1.5);
+  }
+}
+@keyframes shake-big {
+  0% {
+    transform: translateX(0px) scale(1.5, 1.5);
+  }
+  50% {
+    transform: translateX(80px) scale(1.5, 1.5);
+  }
+  100% {
+    transform: translateX(0px) scale(1.5, 1.5);
+  }
+}
+@-webkit-keyframes shake-medium {
+  0% {
+    transform: translateX(0px) scale(1, 1);
+  }
+  50% {
+    transform: translateX(60px) scale(1, 1);
+  }
+  100% {
+    transform: translateX(0px) scale(1, 1);
+  }
+}
+@keyframes shake-medium {
+  0% {
+    transform: translateX(0px) scale(1, 1);
+  }
+  50% {
+    transform: translateX(60px) scale(1, 1);
+  }
+  100% {
+    transform: translateX(0px) scale(1, 1);
+  }
+}
+@-webkit-keyframes shake-small {
+  0% {
+    transform: translateX(0px) scale(0.8, 0.8);
+  }
+  50% {
+    transform: translateX(40px) scale(0.8, 0.8);
+  }
+  100% {
+    transform: translateX(0px) scale(0.8, 0.8);
+  }
+}
+@keyframes shake-small {
+  0% {
+    transform: translateX(0px) scale(0.8, 0.8);
+  }
+  50% {
+    transform: translateX(40px) scale(0.8, 0.8);
+  }
+  100% {
+    transform: translateX(0px) scale(0.8, 0.8);
+  }
+}
+.info {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  z-index: 1000;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #f2f2f2;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  box-shadow: 5px 8px 10px rgba(255, 255, 255, 0.3);
+  width: 380px;
+  height: 80px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info .temp {
+  font-size: 50px;
+}
+.info .day {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */
