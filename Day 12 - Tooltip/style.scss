@@ -1,0 +1,111 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient( to bottom,  rgba(15,2,2,1), rgba(36,163,190,1));
+}
+
+.frame {
+  width: 400px;
+  height: 400px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 20px 0px rgba(#000, 0.7);
+  background: #7653df;
+  color: #fff;
+  font-family: Helvetica, sans-serif;
+}
+
+.quote {
+  position: relative;
+  margin-top: 90px;
+  padding: 0 30px;
+
+  &::before {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    content: "„";
+    font-family: Arial;
+    font-size: 250px;
+    color: #ad98ec;
+    line-height: 35px;
+    top: -100px;
+    left: 7px;
+  }
+
+  p {
+    position: relative;
+    z-index: 1;
+    font-size: 24px;
+    line-height: 35px;
+    font-weight: 300;
+    margin: 20px 0;
+  }
+
+  .author {
+    font-weight: 300;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    background: #35198a;
+    padding: 0px 8px 5px 8px;
+    margin: -10px 0;
+    cursor: pointer;
+
+    &:hover .info,
+    &:focus .info {
+      visibility: visible;
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .info {
+      box-sizing: border-box;
+      position: absolute;
+      bottom: 53px;
+      left: -85px;
+      display: block;
+      background: #35198a;
+      width: 300px;
+      font-size: 16px;
+      line-height: 24px;
+      cursor: text;
+      visibility: hidden;
+      opacity: 0;
+      transform: translate3d(0, -20px, 0);
+      transition: all 0.5s ease-out;
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 10px;
+        height: 10px;
+        transform: rotate(45deg);
+        bottom: -5px;
+        left: 50%;
+        margin-left: -5px;
+        background: #35198a;
+      }
+
+      .pronounce {
+        display: block;
+        background: #fff;
+        color: #35198a;
+        padding: 8px 17px 10px 17px;
+        line-height: 16px;
+      }
+
+      .text {
+        display: block;
+        padding: 13px 17px;
+      }
+    }
+  }
+}
