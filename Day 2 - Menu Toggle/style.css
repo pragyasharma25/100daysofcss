@@ -62,4 +62,4 @@
 .checkbox:checked + .button .icon::after {
   top: 0;
   transform: rotate(-135deg);
-}/*# sourceMappingURL=style.css.map */
+}
